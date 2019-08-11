@@ -3,6 +3,19 @@ function change(){
     var img = document.getElementById("img");
     var widht=number[0].value;
     var height= number[1].value;
-    img.style.width=`${widht}px`;
-    img.style.height=`${height}px`;
+    var sImg = img.height;
+    var sImgw = img.width;
+    if(widht==""){
+        img.style.width=`${sImgw}px`;
+    }
+    else{
+        img.style.width=`${widht}px`;
+    }
+
+    if(height==""){
+        img.style.height=`${sImg}px`;
+    }
+    else{
+        img.style.height=`${height}px`;
+    }
 }
