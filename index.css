@@ -55,10 +55,19 @@
 }
 .submit
 {
-  
+    display: flex;
+    flex-direction: column;
     background: rgb(155, 204, 99);
 }
-#submit
+.submit input
+{
+    width: 30%;
+    margin: 0 auto 0.5rem auto;
+    background: rgb(155, 204, 99);
+    font-size: 1.3rem;
+    text-align: center;
+}
+.submitDesign
 {
     width: 100%;
     text-decoration: none;

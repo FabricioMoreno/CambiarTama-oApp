@@ -34,3 +34,32 @@ function capturar(e){
 window.addEventListener("load",function(){
     document.addEventListener("keyup",capturar);
 })
+/*------MOSTRANDO IMAGEN EN LA WEB LOCALMENTE-----*/
+/*Insertar la imagen en la web */
+function insertar(e){
+    var resultado = e.target.result;
+    var imagen = document.getElementById('imagen');
+    imagen.innerHTML = "<img src='"+resultado+"' id='img' class='img'>";
+
+}
+/*Verificar si se esta subiendo una imagen */
+function leer(e){
+    var archivo = e.target.files;
+    var archivos = archivo[0];
+    console.log(archivos);
+    if(!archivos.type.match(/image/)){
+        alert("Inserte una imagen");
+    }
+    else
+    {
+        var lector = new FileReader();
+        lector.readAsDataURL(archivos);
+        lector.addEventListener('load',insertar);
+    }
+}
+//Seleccionar archivo
+function comenzar(){
+    var archivo = document.getElementById('file');
+    archivo.addEventListener('change',leer);
+}
+window.addEventListener('load',comenzar);
